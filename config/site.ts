@@ -13,14 +13,6 @@ export const siteConfig = {
       href: "/docs",
     },
     {
-      label: "Pricing",
-      href: "/pricing",
-    },
-    {
-      label: "Blog",
-      href: "/blog",
-    },
-    {
       label: "About",
       href: "/about",
     }
@@ -60,10 +52,10 @@ export const siteConfig = {
 		},
 	],
 	links: {
-		github: "https://github.com/nextui-org/nextui",
-		twitter: "https://twitter.com/getnextui",
-		docs: "https://nextui.org",
-		discord: "https://discord.gg/9b6yyZKmH4",
-    sponsor: "https://patreon.com/jrgarciadev"
+		github: "https://github.com/almera-wg",
+		twitter: "https://twitter.com/Makul_0x",
+		docs: "https://almera.xyz/docs",
+		discord: "https://discord.gg/9MCg2W6Y",
+    sponsor: "https://makul.vercel.app"
 	},
 };

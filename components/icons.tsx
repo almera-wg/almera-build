@@ -181,7 +181,7 @@ export const SearchIcon = (props: IconSvgProps) => (
 			strokeLinecap="round"
 			strokeLinejoin="round"
 			strokeWidth="2"
-		/>
+		/> 
 	</svg>
 );
 
