@@ -1,6 +1,7 @@
 import Himg from "./card";
 import TypingText from "../styles/TypingText";
 import Login from "./login";
+import { Button } from "@nextui-org/button";
 
 export const Hero = () => {
     return (
@@ -12,9 +13,14 @@ export const Hero = () => {
                 </div>
                 <div className="justify-center p-4">
                 You are not far away from secure publishing
-                <Login />
+                 <div className="flex justify-centre gap-x-5 p-4 ">
+                  <Button href="/explore" className="pl-4">
+                    Explore
+                  </Button>
+                  <Login />
+                 </div>
                 </div>
-                <hr className="border-dashed border-slate-600" />
+                
             </div>
             <div className="flex-[1.5] border-dashed border-1 border-slate-600 p-4">
                <div className="text-2xl min-h-[100px] overflow-hidden">
@@ -23,4 +29,4 @@ export const Hero = () => {
             </div>
         </div>
     );
-};
+}; 9
