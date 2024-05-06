@@ -11,7 +11,7 @@ function Modal() {
 
   const toggleVisibility = () => setIsVisible(!isVisible);
 
-  const variants: Array<"bordered" | "underlined" | "solid" | "light"> = ["bordered", "underlined", "solid", "light"];
+  const variants: Array<"bordered"> = ["bordered"];
   function closeModal() {
     setModalOpen(false);
   }
