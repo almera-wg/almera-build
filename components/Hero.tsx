@@ -1,6 +1,6 @@
 import Himg from "./card";
 import TypingText from "../styles/TypingText";
-import Login from "./login";
+import Login from "./modal";
 import { Button } from "@nextui-org/button";
 
 export const Hero = () => {

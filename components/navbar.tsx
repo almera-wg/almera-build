@@ -27,7 +27,7 @@ import {
 	// SearchIcon,
 } from "@/components/icons";
 
-import Login from "./login";
+import Login from "./modal";
 import { Button } from "@nextui-org/button";
 
 export const Navbar = () => {

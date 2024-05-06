@@ -1,17 +1,17 @@
 'use client'
 import React, { useState } from 'react';
-import {Input} from "@nextui-org/input";
-import {EyeFilledIcon} from "./icons";
-import {EyeSlashFilledIcon} from "./icons";
 
+import {Tabs, Tab} from "@nextui-org/react"; 
+import Login from './auth/login';
+import Signup from './auth/Signup';
 
-function Login() {
+function Modal() {
   const [isModalOpen, setModalOpen] = useState(false);
   const [isVisible, setIsVisible] = React.useState(false);
 
   const toggleVisibility = () => setIsVisible(!isVisible);
 
-
+  const variants: Array<"bordered" | "underlined" | "solid" | "light"> = ["bordered", "underlined", "solid", "light"];
   function closeModal() {
     setModalOpen(false);
   }
@@ -34,34 +34,19 @@ function Login() {
 
       {isModalOpen && (
         <div className="modal-backdrop fixed top-0 left-0 w-screen h-screen bg-black bg-opacity-40 backdrop-blur-sm flex items-center justify-center z-50" onClick={handleBackdropClick}>
-          <div className="modal-content relative p-8 bg-white bg-opacity-40 rounded-lg max-w-sm w-full shadow-md">
-          <Input
-             isClearable
-             type="email"
-             label="Email"
-             variant="bordered"
-             placeholder="Enter your email"
-             defaultValue="junior@nextui.org"
-             onClear={() => console.log("input cleared")}
-             className="max-w-xs"
-           />
-           <Input
-            label="Password"
-            variant="bordered"
-            placeholder="Enter your password"
-            endContent={
-           <button className="focus:outline-none" type="button" onClick={toggleVisibility}>
-             {isVisible ? (
-            <EyeSlashFilledIcon className="text-2xl text-default-400 pointer-events-none" />
-             ) : (
-            <EyeFilledIcon className="text-2xl text-default-400 pointer-events-none" />
-              )}
-            </button>
-             }
-                type={isVisible ? "text" : "password"}
-             className="max-w-xs mt-4"
-             />
-             <hr className='border-dashed mt-4 mb-4 border-slate-600'></hr>
+          <div className="modal-content relative p-8 bg-white bg-opacity-60 rounded-lg max-w-sm w-full shadow-xl">
+          <div className="flex flex-wrap gap-4">
+      {variants.map((variant) => (
+        <Tabs key={variant} variant={variant} aria-label="Tabs variants" className='justify-center'>
+          <Tab key="SignUp" title="SignUp">
+            <Signup />
+          </Tab>
+          <Tab key="Login" title="Login">
+            <Login />
+          </Tab>
+        </Tabs>
+      ))}
+    </div>
           </div>
         </div>
       )}
@@ -69,5 +54,5 @@ function Login() {
   );
 }
 
-export default Login;
+export default Modal;
 
