@@ -1,4 +1,4 @@
-import Himg from "./card";
+import Himg from "./cards/card";
 import TypingText from "../styles/TypingText";
 import Login from "./modal";
 import { Button } from "@nextui-org/button";
