@@ -27,7 +27,7 @@ import {
 	// SearchIcon,
 } from "@/components/icons";
 
-import Login from "./login";
+import Login from "./modal";
 import { Button } from "@nextui-org/button";
 
 export const Navbar = () => {
@@ -98,7 +98,7 @@ export const Navbar = () => {
 				{/* <NavbarItem className="hidden lg:flex">{searchInput}</NavbarItem> */}
 				<NavbarItem className="hidden gap-x-2 md:flex">
 			
-			  		<Login />
+			  		{/* <Login /> */}
 				</NavbarItem>
 			</NavbarContent>
 
