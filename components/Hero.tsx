@@ -1,6 +1,6 @@
 import Himg from "./cards/card";
 import TypingText from "../styles/TypingText";
-import Login from "./modal";
+import Publish from "./modal";
 import { Button } from "@nextui-org/button";
 
 export const Hero = () => {
@@ -17,7 +17,7 @@ export const Hero = () => {
                   <Button href="/explore" className="pl-4">
                     Explore
                   </Button>
-                  <Login />
+                  <Publish />
                  </div>
                 </div>
                 
