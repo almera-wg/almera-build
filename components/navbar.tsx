@@ -98,7 +98,7 @@ export const Navbar = () => {
 				{/* <NavbarItem className="hidden lg:flex">{searchInput}</NavbarItem> */}
 				<NavbarItem className="hidden gap-x-2 md:flex">
 			
-			  		<Login />
+			  		{/* <Login /> */}
 				</NavbarItem>
 			</NavbarContent>
 

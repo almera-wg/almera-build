@@ -1,43 +1,93 @@
 'use client'
 import React from "react";
 import {Input} from "@nextui-org/input";
-import {EyeFilledIcon} from "../icons";
-import {EyeSlashFilledIcon} from "../icons";
 import { Button } from "@nextui-org/button";
+import {Textarea} from "@nextui-org/react";
+import {Dropdown, DropdownTrigger, DropdownMenu, DropdownItem,} from "@nextui-org/dropdown";
 
-
-export default function Login() {
+export default function Publish() {
     const [isVisible, setIsVisible] = React.useState(false);
 
     const toggleVisibility = () => setIsVisible(!isVisible);
+    const items = [
+      {
+        key: "new",
+        label: "New file",
+      },
+      {
+        key: "copy",
+        label: "Copy link",
+      },
+      {
+        key: "edit",
+        label: "Edit file",
+      },
+      {
+        key: "delete",
+        label: "Delete file",
+      }
+    ];
     return (
     <form >
-        <div className="flex flex-wrap gap-4">
+     <div className="flex flex-wrap gap-4">
       <Input
         isReadOnly
-        type="email"
-        label="Email"
+        type="name"
+        label="name"
         variant="bordered"
-        defaultValue="junior@nextui.org"
-        className="max-w-xs"
+        defaultValue="your name!"
+        className=""
       />
       <Input
-      label="Password"
+        isReadOnly
+        type="title"
+        label="title"
+        variant="bordered"
+        defaultValue="title of the research!"
+        className=""
+      />
+      <Input
+        isReadOnly
+        type="research area"
+        label="research area"
+        variant="bordered"
+        defaultValue="area of the research!"
+        className="max-w-xs"
+      />
+      <Textarea
+      label="Abstract"
       variant="bordered"
-      placeholder="Enter your password"
-      endContent={
-        <button className="focus:outline-none" type="button" onClick={toggleVisibility}>
-          {isVisible ? (
-            <EyeSlashFilledIcon className="text-2xl text-default-400 pointer-events-none" />
-          ) : (
-            <EyeFilledIcon className="text-2xl text-default-400 pointer-events-none" />
-          )}
-        </button>
-      }
-      type={isVisible ? "text" : "password"}
-      className="max-w-xs"
+      placeholder="Enter about your reserach"
+      disableAnimation
+      disableAutosize
+      classNames={{
+        base: "max-w-xs",
+        input: "resize-y min-h-[40px]",
+      }}
     />
-    <Button className="justify-center">Login</Button>
+    <Dropdown>
+      <DropdownTrigger>
+        <Button 
+          variant="faded" 
+          className="pl-4"
+        >
+          Upload file
+        </Button>
+      </DropdownTrigger>
+      <DropdownMenu aria-label="Dynamic Actions" items={items}>
+        {(item) => (
+          <DropdownItem
+            key={item.key}
+            color={item.key === "delete" ? "danger" : "default"}
+            className={item.key === "delete" ? "text-danger" : ""}
+          >
+            {item.label}
+          </DropdownItem>
+        )}
+      </DropdownMenu>
+    </Dropdown>
+     
+    <Button variant="faded" className="justify-center">Publish it!</Button>
     </div>
     </form>
       

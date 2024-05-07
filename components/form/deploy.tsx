@@ -1,12 +1,11 @@
 'use client'
 import React from "react";
 import {Input} from "@nextui-org/input";
-import {EyeFilledIcon} from "../icons";
-import {EyeSlashFilledIcon} from "../icons";
 import { Button } from "@nextui-org/button";
+import {Textarea} from "@nextui-org/react";
 
 
-export default function Signup() {
+export default function Deploy() {
     const [isVisible, setIsVisible] = React.useState(false);
 
     const toggleVisibility = () => setIsVisible(!isVisible);
@@ -15,29 +14,33 @@ export default function Signup() {
         <div className="flex flex-wrap gap-4">
       <Input
         isReadOnly
-        type="email"
-        label="Email"
+        type="name"
+        label="name"
         variant="bordered"
-        defaultValue="junior@nextui.org"
+        defaultValue="Your proff. name"
         className="max-w-xs"
       />
       <Input
-      label="Password"
+        isReadOnly
+        type="key"
+        label="your CID / DOI"
+        variant="bordered"
+        defaultValue="bhufrfg78i3t64f7....."
+        className="max-w-xs"
+      />
+      <Textarea
+      label="Abstract"
       variant="bordered"
-      placeholder="Enter your password"
-      endContent={
-        <button className="focus:outline-none" type="button" onClick={toggleVisibility}>
-          {isVisible ? (
-            <EyeSlashFilledIcon className="text-2xl text-default-400 pointer-events-none" />
-          ) : (
-            <EyeFilledIcon className="text-2xl text-default-400 pointer-events-none" />
-          )}
-        </button>
-      }
-      type={isVisible ? "text" : "password"}
-      className="max-w-xs"
+      placeholder="Short Discription your reserach"
+      disableAnimation
+      disableAutosize
+      classNames={{
+        base: "max-w-xs",
+        input: "resize-y min-h-[40px]",
+      }}
     />
-    <Button className="justify-center">Signup</Button>
+    <Button className="justify-center">Connect wallet</Button>
+    <Button className="justify-center">Deploy</Button>
     </div>
     </form>
       

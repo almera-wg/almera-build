@@ -2,8 +2,8 @@
 import React, { useState } from 'react';
 
 import {Tabs, Tab} from "@nextui-org/react"; 
-import Login from './form/publish';
-import Signup from './form/deploy';
+import Publish from './form/publish';
+import Deploy from './form/deploy';
 
 function Modal() {
   const [isModalOpen, setModalOpen] = useState(false);
@@ -38,11 +38,11 @@ function Modal() {
           <div className="flex flex-wrap gap-4">
       {variants.map((variant) => (
         <Tabs key={variant} variant={variant} aria-label="Tabs variants" className='justify-center'>
-          <Tab key="SignUp" title="SignUp">
-            <Signup />
+          <Tab key="Publish" title="Publish">
+            <Publish />
           </Tab>
-          <Tab key="Login" title="Login">
-            <Login />
+          <Tab key="Deploy" title="Deploy">
+            <Deploy />
           </Tab>
         </Tabs>
       ))}
