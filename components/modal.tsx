@@ -2,8 +2,8 @@
 import React, { useState } from 'react';
 
 import {Tabs, Tab} from "@nextui-org/react"; 
-import Login from './auth/login';
-import Signup from './auth/Signup';
+import Login from './form/publish';
+import Signup from './form/deploy';
 
 function Modal() {
   const [isModalOpen, setModalOpen] = useState(false);
